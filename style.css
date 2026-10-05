@@ -1,0 +1,336 @@
+:root {
+    --crudo: #faf5ea;
+    --tinta: #2b1b12;
+    --magenta: #b23a56;
+    --indigo: #2c4870;
+    --mostaza: #c9932e;
+    --linea: #e3d6bd;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: var(--crudo);
+    color: var(--tinta);
+    font-family: "Karla", "Segoe UI", Arial, sans-serif;
+    font-size: 17px;
+    line-height: 1.65;
+}
+
+/* ---------- Animacion de entrada ---------- */
+
+@keyframes aparecer {
+    from { opacity: 0; transform: translateY(-10px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ---------- Encabezado ---------- */
+
+header {
+    padding: 40px 24px 28px 24px;
+    text-align: center;
+    border-bottom: 6px solid var(--magenta);
+    background:
+        linear-gradient(90deg, var(--magenta) 0 25%, var(--mostaza) 25% 50%,
+                                var(--indigo) 50% 75%, var(--magenta) 75% 100%)
+        top / 100% 4px no-repeat,
+        linear-gradient(180deg, #f6e3d0, var(--crudo));
+}
+
+header h1 {
+    font-family: "Fraunces", Georgia, serif;
+    font-size: 2.4em;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    margin: 18px 0 6px 0;
+    color: var(--tinta);
+    animation: aparecer 0.8s ease;
+}
+
+header p {
+    margin: 0;
+    color: var(--indigo);
+    font-style: italic;
+}
+
+/* ---------- Navegacion (fija arriba) ---------- */
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 4px;
+    background-color: var(--tinta);
+    padding: 6px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+nav a {
+    color: var(--crudo);
+    text-decoration: none;
+    font-size: 0.92em;
+    font-weight: 700;
+    padding: 10px 16px;
+    border-bottom: 3px solid transparent;
+    transition: border-color 0.15s ease, color 0.15s ease;
+}
+
+nav a:hover {
+    border-color: var(--mostaza);
+    color: var(--mostaza);
+}
+
+/* ---------- Contenido principal ---------- */
+
+main {
+    max-width: 740px;
+    margin: 0 auto;
+    padding: 36px 24px 64px 24px;
+}
+
+h2 {
+    font-family: "Fraunces", Georgia, serif;
+    font-size: 1.55em;
+    font-weight: 600;
+    color: var(--magenta);
+    margin-top: 2.2em;
+    padding-bottom: 8px;
+    border-bottom: 2px dotted var(--linea);
+}
+
+h2:first-of-type {
+    margin-top: 0;
+}
+
+h3 {
+    font-family: "Fraunces", Georgia, serif;
+    color: var(--indigo);
+    font-size: 1.15em;
+    margin-top: 1.6em;
+}
+
+p {
+    max-width: 68ch;
+}
+
+/* Letra capital en el primer parrafo de la primera seccion */
+main section:first-of-type p:first-of-type::first-letter {
+    font-family: "Fraunces", Georgia, serif;
+    font-size: 2.4em;
+    color: var(--magenta);
+    float: left;
+    line-height: 1;
+    margin-right: 6px;
+}
+
+ul, ol {
+    padding-left: 1.3em;
+}
+
+li {
+    margin-bottom: 6px;
+}
+
+li::marker {
+    color: var(--magenta);
+    font-weight: 700;
+}
+
+a {
+    color: var(--indigo);
+}
+
+a:hover {
+    color: var(--magenta);
+}
+
+/* ---------- Imagenes ---------- */
+
+figure {
+    margin: 24px 0;
+    text-align: center;
+}
+
+figure img, main img {
+    max-width: 100%;
+    height: auto;
+    border: 3px solid var(--crudo);
+    outline: 2px solid var(--mostaza);
+    outline-offset: -1px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(43, 27, 18, 0.25);
+    transition: transform 0.3s ease;
+}
+
+figure img:hover, td img:hover, .galeria img:hover {
+    transform: scale(1.05);
+}
+
+figcaption {
+    margin-top: 10px;
+    font-size: 0.88em;
+    color: var(--indigo);
+    font-style: italic;
+}
+
+/* Galeria: imagenes lado a lado con flexbox
+   (envuelve tus imagenes en <div class="galeria">) */
+.galeria {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin: 24px 0;
+}
+
+/* ---------- Tabla ---------- */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 0.94em;
+}
+
+caption {
+    text-align: left;
+    font-weight: 700;
+    color: var(--indigo);
+    margin-bottom: 8px;
+}
+
+th {
+    background-color: var(--indigo);
+    color: var(--crudo);
+    text-align: left;
+    padding: 10px 12px;
+    font-weight: 700;
+}
+
+td {
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--linea);
+    vertical-align: top;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f2e9d8;
+}
+
+tbody tr:hover {
+    background-color: #f5d9df;
+}
+
+td img {
+    outline-width: 1px;
+}
+
+/* ---------- Formulario ---------- */
+
+form {
+    background-color: #fff;
+    border: 1px solid var(--linea);
+    border-left: 6px solid var(--magenta);
+    border-radius: 8px;
+    box-shadow: 0 4px 14px rgba(43, 27, 18, 0.15);
+    padding: 24px;
+    max-width: 480px;
+    margin-top: 20px;
+}
+
+label {
+    display: block;
+    font-weight: 700;
+    color: var(--tinta);
+    margin-top: 16px;
+    margin-bottom: 4px;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 9px 10px;
+    border: 1px solid var(--linea);
+    background-color: var(--crudo);
+    font-family: inherit;
+    font-size: 0.95em;
+    color: var(--tinta);
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: 2px solid var(--mostaza);
+    outline-offset: 1px;
+}
+
+button {
+    margin-top: 20px;
+    margin-right: 10px;
+    padding: 10px 22px;
+    border: none;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 0.95em;
+    cursor: pointer;
+    transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+button[type="submit"] {
+    background-color: var(--magenta);
+    color: var(--crudo);
+}
+
+button[type="reset"] {
+    background-color: transparent;
+    color: var(--tinta);
+    border: 1px solid var(--tinta);
+}
+
+button:hover {
+    opacity: 0.85;
+    transform: translateY(-2px);
+}
+
+/* ---------- Multimedia ---------- */
+
+audio, video {
+    width: 100%;
+    max-width: 480px;
+    display: block;
+    margin: 14px 0;
+}
+
+/* ---------- Pie de pagina ---------- */
+
+footer {
+    text-align: center;
+    padding: 22px;
+    background-color: var(--tinta);
+    color: var(--crudo);
+    font-size: 0.85em;
+}
+
+footer a {
+    color: var(--mostaza);
+}
+
+/* ---------- Responsivo ---------- */
+
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    nav a {
+        padding: 8px 10px;
+        font-size: 0.85em;
+    }
+
+    th, td {
+        padding: 8px 6px;
+        font-size: 0.9em;
+    }
+}

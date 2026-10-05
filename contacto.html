@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Villa 360 | Inicio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Karla:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    </head>
+
+<body>
+
+    <header>
+        <h1>Envía tu testimonio</h1>
+    </header>
+
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="tradiciones.html">Tradiciones</a>
+        <a href="gastronomia.html">Gastronomía</a>
+        <a href="sitios.html">Sitios turísticos</a>
+        <a href="multimedia.html">Multimedia</a>
+        <a href="contacto.html">Contacto</a>
+    </nav>
+
+    <main>
+
+        <section id="formulario-contacto">
+
+            <h2>Formulario de contacto</h2>
+
+            <p>
+                ¿Conoces una tradición, receta o sitio que debería
+                aparecer en Villa 360? Compártelo con nosotros.
+            </p>
+
+            <form action="contacto.html" method="GET">
+
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Escribe tu nombre">
+
+                <label for="correo">Correo electrónico:</label>
+                <input type="email" id="correo" name="correo" placeholder="ejemplo@gmail.com">
+
+                <label for="comunidad">Comunidad o localidad:</label>
+                <input type="text" id="comunidad" name="comunidad" placeholder="Ej. Villa de Allende">
+
+                <label for="categoria">Tipo de contenido:</label>
+                <select id="categoria" name="categoria">
+                    <option value="tradicion">Tradición</option>
+                    <option value="gastronomia">Gastronomía</option>
+                    <option value="sitio">Sitio turístico</option>
+                    <option value="testimonio">Testimonio</option>
+                </select>
+
+                <label for="mensaje">Cuéntanos tu testimonio:</label>
+                <textarea id="mensaje" name="mensaje" rows="5" placeholder="Escribe aquí tu mensaje"></textarea>
+
+                <button type="submit">Enviar</button>
+                <button type="reset">Limpiar</button>
+
+            </form>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Villa 360 &copy; 2026 &mdash;Villa de Allende</p>
+    </footer>
+
+</body>
+
+</html>
